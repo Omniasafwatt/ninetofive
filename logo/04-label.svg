@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 240" width="1040" height="480"><style>@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@1,6..96,400&amp;family=Cormorant+Garamond:ital,wght@0,500;1,400&amp;family=Jost:wght@300&amp;display=swap");</style>
+<rect x="10" y="10" width="500" height="220" rx="4" fill="#5C4033"/>
+<rect x="24" y="24" width="472" height="192" rx="2" fill="none" stroke="#C8B6A6" stroke-width="1.2" stroke-dasharray="6 5"/>
+<text x="260" y="132" text-anchor="middle" font-family="Cormorant Garamond, serif" font-weight="500" font-size="74" fill="#F4EFE8">nine <tspan font-style="italic" font-weight="400">to</tspan> five<tspan fill="#C8B6A6">.</tspan></text>
+<text x="260" y="176" text-anchor="middle" font-family="Jost, sans-serif" font-weight="300" font-size="12" letter-spacing="7" fill="#C8B6A6">MADE FOR YOUR DAY</text>
+</svg>

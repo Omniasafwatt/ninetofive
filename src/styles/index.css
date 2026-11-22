@@ -1,0 +1,190 @@
+@import 'tailwindcss';
+
+/*
+ * NINE TO FIVE — taken straight from the brand card:
+ * brick red + deep maroon, soft studio grey, charcoal type, one thin red rule.
+ */
+:root {
+  --accent: #941a1f;
+  --accent-ink: #ffffff;
+  --ease-lux: cubic-bezier(0.22, 1, 0.36, 1);
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-red: #941a1f;
+  --color-maroon: #6c141c;
+  --color-blush: #f3e4e2;
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-ink: #2b2627;
+  --color-charcoal: #4c494a;
+  --color-concrete: #dddbdb;
+  --color-fog: #ebeaea;
+  --color-paper: #f5f4f3;
+  --font-sans: 'Jost', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Jost', ui-sans-serif, system-ui, sans-serif;
+  --ease-lux: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-paper text-ink font-sans;
+    overflow-x: clip;
+  }
+  ::selection {
+    background: var(--color-red);
+    color: #fff;
+  }
+  img {
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+  button {
+    cursor: pointer;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-red);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* Wide, airy capitals — the "GOOD STYLE WORKS OVERTIME" voice from the card. */
+  .display {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    line-height: 1.08;
+    text-transform: uppercase;
+  }
+  .eyebrow {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+  }
+  .gutter {
+    padding-inline: clamp(1.25rem, 4vw, 4rem);
+  }
+  /* The thin red line under the card's tagline. */
+  .rule {
+    display: block;
+    height: 3px;
+    width: 4.5rem;
+    border-radius: 99px;
+    background: var(--color-red);
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    height: 3.25rem;
+    padding-inline: 1.75rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    transition: background-color 0.35s var(--ease-lux), color 0.35s var(--ease-lux), border-color 0.35s var(--ease-lux), transform 0.35s var(--ease-lux);
+  }
+  .btn:active {
+    transform: scale(0.97);
+  }
+  .btn-red {
+    background: var(--color-red);
+    color: #fff;
+  }
+  .btn-red:hover {
+    background: var(--color-maroon);
+  }
+  .btn-white {
+    background: #fff;
+    color: var(--color-red);
+  }
+  .btn-white:hover {
+    background: var(--color-blush);
+  }
+  .btn-ghost-light {
+    border: 1px solid rgb(255 255 255 / 0.6);
+    color: #fff;
+  }
+  .btn-ghost-light:hover {
+    background: #fff;
+    color: var(--color-red);
+  }
+  .btn-ghost {
+    border: 1px solid color-mix(in srgb, var(--color-ink) 30%, transparent);
+    color: var(--color-ink);
+  }
+  .btn-ghost:hover {
+    border-color: var(--color-red);
+    color: var(--color-red);
+  }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    height: 2.4rem;
+    padding-inline: 1.1rem;
+    border-radius: 999px;
+    border: 1px solid color-mix(in srgb, var(--color-ink) 18%, transparent);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: all 0.3s var(--ease-lux);
+  }
+  .chip:hover {
+    border-color: var(--color-red);
+    color: var(--color-red);
+  }
+  .chip[aria-pressed='true'] {
+    background: var(--color-red);
+    border-color: var(--color-red);
+    color: #fff;
+  }
+  .link {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.45s var(--ease-lux);
+  }
+  .link:hover,
+  .link[aria-current='page'] {
+    background-size: 100% 1px;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee {
+  animation: marquee 38s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "allowImportingTsExtensions": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "types": [
+      "vite/client"
+    ]
+  },
+  "include": [
+    "src",
+    "vite.config.ts"
+  ],
+  "exclude": [
+    "src/legacy",
+    "src/components/layout",
+    "src/components/product",
+    "src/components/rack",
+    "src/components/sections",
+    "src/components/ui",
+    "src/components/checkout",
+    "src/context/AccentContext.tsx",
+    "src/context/BagContext.tsx",
+    "src/context/SmoothScroll.tsx",
+    "src/hooks",
+    "src/lib/gsap.ts",
+    "src/lib/orders.ts",
+    "src/lib/pricing.ts",
+    "src/pages/Checkout.tsx",
+    "src/pages/CollectionPage.tsx",
+    "src/pages/Collections.tsx",
+    "src/pages/LookbookPage.tsx",
+    "src/admin/pages/Orders.tsx"
+  ]
+}
